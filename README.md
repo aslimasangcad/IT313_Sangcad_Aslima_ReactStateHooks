@@ -1,56 +1,36 @@
-# Welcome to your Expo app 👋
+Project Description
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+The Lab Timer & Practice Tracker is a simple mobile app made using React Native and Expo. Ginagamit ito para mabilang ang mga problems na nasosolve ng user at ma-check ang practice time gamit ang stopwatch.
 
-## Get started
+Objectives
 
-1. Install dependencies
+The main objective of this project is to learn how to use React state and hooks. Gusto rin naming matutunan kung paano mag-count ng solved problems gamit ang button, gumawa ng stopwatch na puwedeng i-start at i-stop, at magpakita ng message kapag naka-solve na ng five problems. We also want to understand kung paano nagsha-share ng data ang components gamit ang props.
 
-   ```bash
-   npm install
-   ```
+Features
 
-2. Start the app
+The app has a Practice Tracker na nagpapakita kung ilang problems na ang nasosolve. Kapag pinindot ang Solve +1 button, madadagdagan ng one ang count. Ang Reset button naman ay ibinabalik ang count sa zero. May Stopwatch din na nagpapakita ng time in minutes and seconds. The Start/Stop button is used to start or pause the timer. Kapag umabot sa five ang solved problems, lalabas ang message na "Great job!"
 
-   ```bash
-   npx expo start
-   ```
+Technologies Used
 
-In the output, you'll find options to open the app in a
+This project uses React Native, Expo, TypeScript, JavaScript, and React Hooks. Ginagamit ang mga technologies na ito para magawa at mapatakbo ang mobile app.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+React Hooks Used
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+The "useState" hook is used to store the solved count, timer status, and elapsed time. Ang "useEffect" naman ay ginagamit para tumakbo ang timer every second at ma-stop ito kapag kailangan. We also use a custom hook called "useStopwatch" para i-manage ang stopwatch. Nagdadagdag ito ng one second habang running ang timer. Ginagamit din ang "clearInterval" para ma-stop nang maayos ang timer.
 
-## Get a fresh project
+Components
 
-When you're ready, run:
+The "PracticeTracker" component shows the solved count, Solve +1 button, and Reset button. Dito rin lumalabas ang "Great job!" kapag umabot sa five ang count. The "Stopwatch" component displays the current time at kung running or paused ang timer. The "LabScreen" component is the main part of the app. Ito ang nagma-manage ng data at nagkokonekta sa PracticeTracker at Stopwatch components.
 
-```bash
-npm run reset-project
-```
+How to Run the Application
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+First, kailangan i-install ang Node.js at Visual Studio Code. Then, open the project folder in Visual Studio Code and open the terminal. Kung hindi pa installed ang project dependencies, type "npm install". After that, type "npx expo start" para patakbuhin ang app. Open Expo Go sa phone at i-scan ang QR code para makita at ma-test ang application. Puwede rin gumamit ng emulator.
 
-### Other setup steps
+Testing
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+We need to test the app para malaman kung gumagana nang tama ang lahat ng features. Dapat magsimula sa zero ang solved count, at dapat "00:00" at "Paused" ang unang display ng stopwatch. Kapag pinindot ang Solve +1, madadagdagan ng one ang count. Kapag napindot ito nang five times, dapat lumabas ang "Great job!" message. Kapag pinindot ang Reset, babalik sa zero ang solved count pero hindi magre-reset ang stopwatch. Kapag pinindot ang Start, tatakbo ang timer, at kapag pinindot ang Stop, magpa-pause ito.
 
-## Learn more
+Common Errors and Fixes
 
-To learn more about developing your project with Expo, look at the following resources:
+One common error is incorrect capitalization. Ang mga component tulad ng "View", "Text", at "Pressable" ay dapat tama ang spelling at capitalization. Another error is using incorrect prop names. Dapat pareho ang spelling ng "onSolve" at "onReset" sa lahat ng parts ng code kung saan ginagamit ang mga ito. Puwede ring magkaroon ng error kapag may missing braces or parentheses, kaya kailangan i-check nang mabuti ang code. Lastly, kapag nakalimutang gamitin ang "clearInterval", maaaring hindi ma-stop nang maayos ang timer. To fix this, kailangan itong ilagay sa cleanup function ng "useEffect".
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
