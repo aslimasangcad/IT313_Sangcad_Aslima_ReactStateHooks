@@ -33,4 +33,3 @@ We need to test the app para malaman kung gumagana nang tama ang lahat ng featur
 Common Errors and Fixes
 
 One common error is incorrect capitalization. Ang mga component tulad ng "View", "Text", at "Pressable" ay dapat tama ang spelling at capitalization. Another error is using incorrect prop names. Dapat pareho ang spelling ng "onSolve" at "onReset" sa lahat ng parts ng code kung saan ginagamit ang mga ito. Puwede ring magkaroon ng error kapag may missing braces or parentheses, kaya kailangan i-check nang mabuti ang code. Lastly, kapag nakalimutang gamitin ang "clearInterval", maaaring hindi ma-stop nang maayos ang timer. To fix this, kailangan itong ilagay sa cleanup function ng "useEffect".
-
